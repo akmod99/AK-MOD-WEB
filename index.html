@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title> AK MODMOD - PROFESSIONAL WEB STORE  </title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color-light: #7C3AED;
+            --primary-variant-color-light: #6D28D9;
+            --secondary-color-light: #00BCD4;
+            --background-color-light: #f4f6f8;
+            --surface-color-light: #ffffff;
+            --on-primary-color-light: #ffffff;
+            --on-surface-color-light: #1f2937;
+            --on-surface-variant-color-light: #6b7280;
+            --error-color-light: #F44336;
+            --success-color-light: #4CAF50;
+            --separator-color-light: #e5e7eb;
+            --highlight-bg-light: rgba(124, 58, 237, 0.1);
+            --search-bar-bg-light: #EBEDF0;
+            --search-bar-focus-bg-light: #ffffff;
+            --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.07);
+            --box-shadow-strong-light: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+            --primary-color-dark: #8B5CF6;
+            --primary-variant-color-dark: #7C3AED;
+            --secondary-color-dark: #22D3EE;
+            --background-color-dark: #111827;
+            --surface-color-dark: #1f2937;
+            --on-primary-color-dark: #ffffff;
+            --on-surface-color-dark: #f3f4f6;
+            --on-surface-variant-color-dark: #9ca3af;
+            --error-color-dark: #EF4444;
+            --success-color-dark: #22C55E;
+            --separator-color-dark: #374151;
+            --highlight-bg-dark: rgba(139, 92, 246, 0.15);
+            --search-bar-bg-dark: #374151;
+            --search-bar-focus-bg-dark: #1f2937;
+            --box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.25);
+            --box-shadow-strong-dark: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+            --primary-color: var(--primary-color-light);
+            --primary-variant-color: var(--primary-variant-color-light);
+            --secondary-color: var(--secondary-color-light);
+            --background-color: var(--background-color-light);
+            --surface-color: var(--surface-color-light);
+            --on-primary-color: var(--on-primary-color-light);
+            --on-surface-color: var(--on-surface-color-light);
+            --on-surface-variant-color: var(--on-surface-variant-color-light);
+            --error-color: var(--error-color-light);
+            --success-color: var(--success-color-light);
+            --separator-color: var(--separator-color-light);
+            --highlight-bg: var(--highlight-bg-light);
+            --search-bar-bg: var(--search-bar-bg-light);
+            --search-bar-focus-bg: var(--search-bar-focus-bg-light);
+            --box-shadow: var(--box-shadow-light);
+            --box-shadow-strong: var(--box-shadow-strong-light);
+
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 18px;
+            --spacing-unit: 8px;
+            --font-main: 'Inter', sans-serif;
+            --transition-speed: 0.25s;
+            --safe-area-inset-top: env(safe-area-inset-top, 0px);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+            --safe-area-inset-left: env(safe-area-inset-left, 0px);
+            --safe-area-inset-right: env(safe-area-inset-right, 0px);
+        }
+
+        body.dark-theme {
+            --primary-color: var(--primary-color-dark);
+            --primary-variant-color: var(--primary-variant-color-dark);
+            --secondary-color: var(--secondary-color-dark);
+            --background-color: var(--background-color-dark);
+            --surface-color: var(--surface-color-dark);
+            --on-primary-color: var(--on-primary-color-dark);
+            --on-surface-color: var(--on-surface-color-dark);
+            --on-surface-variant-color: var(--on-surface-variant-color-dark);
+            --error-color: var(--error-color-dark);
+            --success-color: var(--success-color-dark);
+            --separator-color: var(--separator-color-dark);
+            --highlight-bg: var(--highlight-bg-dark);
+            --search-bar-bg: var(--search-bar-bg-dark);
+            --search-bar-focus-bg: var(--search-bar-focus-bg-dark);
+            --box-shadow: var(--box-shadow-dark);
+            --box-shadow-strong: var(--box-shadow-strong-dark);
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+        
+        html { 
+            font-size: 16px; 
+            scroll-behavior: smooth; 
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--on-surface-color);
+            line-height: 1.6;
+            overscroll-behavior-y: contain;
+            overflow-x: hidden;
+            padding-top: var(--safe-area-inset-top);
+            position: relative;
+            min-height: 100vh;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+        
+        body.game-active { 
+            overflow: hidden; 
+            background-color: #000; 
+        }
+        
+        body.modal-open { 
+            overflow: hidden; 
+        }
+
+        .main-container {
+            padding: 0 calc(var(--spacing-unit) * 2 + var(--safe-area-inset-left))
+                     calc(var(--spacing-unit) * 2 + var(--safe-area-inset-bottom))
+                     calc(var(--spacing-unit) * 2 + var(--safe-area-inset-right));
+            padding-top: calc(70px + var(--spacing-unit) * 2);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-header {
+            background-color: color-mix(in srgb, var(--surface-color) 90%, transparent);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--on-surface-color);
+            padding: var(--spacing-unit) calc(var(--spacing-unit) * 2 + var(--safe-area-inset-left));
+            padding-right: calc(var(--spacing-unit) * 2 + var(--safe-area-inset-right));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-unit);
+            position: fixed;
+            top: var(--safe-area-inset-top);
+            left: 0; 
+            width: 100%;
+            height: 70px;
+            z-index: 1000;
+            border-bottom: 1px solid var(--separator-color);
+            transition: transform var(--transition-speed) ease-out, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+        }
+        
+        body.game-active .app-header { 
+            transform: translateY(-120%); 
+        }
+        
+        .header-left { 
+            flex-shrink: 0; 
+        }
+        
+        .app-header h1 {
+            font-size: 1.35rem; 
+            font-weight: 700; 
+            margin: 0;
+            display: flex; 
+            align-items: center; 
+            gap: calc(var(--spacing-unit) * 1.2);
+            color: var(--primary-variant-color);
+        }
+        
+        .app-icon { 
+            font-size: 1.7rem; 
+        }
+
+        .header-center {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0 var(--spacing-unit);
+        }
+        
+        .search-bar-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 500px; 
+        }
+        
+        #search-input {
+            width: 100%; 
+            height: 44px;
+            padding: calc(var(--spacing-unit) * 1.2) calc(var(--spacing-unit) * 4.5) calc(var(--spacing-unit) * 1.2) calc(var(--spacing-unit) * 5);
+            border: 1px solid var(--separator-color);
+            border-radius: var(--border-radius-md);
+            font-size: 1rem;
+            background-color: var(--search-bar-bg);
+            color: var(--on-surface-color);
+            transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease;
+            -webkit-appearance: none;
+        }
+        
+        #search-input::placeholder { 
+            color: var(--on-surface-variant-color); 
+            font-weight: 500; 
+        }
+        
+        #search-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px var(--highlight-bg);
+            background-color: var(--search-bar-focus-bg);
+        }
+        
+        .search-bar-container::before {
+            content: ''; 
+            position: absolute;
+            left: calc(var(--spacing-unit) * 1.8); 
+            top: 50%; 
+            transform: translateY(-50%);
+            width: 20px; 
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23757575' width='24px' height='24px'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; 
+            background-position: center;
+            pointer-events: none; 
+            opacity: 0.7;
+        }
+        
+        body.dark-theme .search-bar-container::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239ca3af' width='24px' height='24px'%3E%3Cpath d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
+        }
+        
+        #search-clear-button {
+            position: absolute; 
+            right: var(--spacing-unit); 
+            top: 50%; 
+            transform: translateY(-50%);
+            background: none; 
+            border: none; 
+            color: var(--on-surface-variant-color); 
+            cursor: pointer;
+            padding: calc(var(--spacing-unit) * 0.8); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        #search-clear-button svg { 
+            fill: currentColor; 
+            width:20px; 
+            height:20px; 
+            display:block;
+        }
+        
+        #search-clear-button:hover { 
+            color: var(--on-surface-color); 
+            background-color: color-mix(in srgb, var(--on-surface-color) 5%, transparent); 
+        }
+
+        .header-right { 
+            flex-shrink: 0; 
+            display: flex; 
+            align-items: center; 
+            gap: var(--spacing-unit); 
+        }
+        
+        #settings-button {
+            background: none; 
+            border: none; 
+            color: var(--on-surface-variant-color);
+            padding: var(--spacing-unit); 
+            cursor: pointer; 
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease;
+        }
+        
+        #settings-button svg { 
+            width: 24px; 
+            height: 24px; 
+            fill: currentColor; 
+            display: block; 
+        }
+        
+        #settings-button:hover { 
+            color: var(--primary-color); 
+            background-color: var(--highlight-bg); 
+        }
+
+        #loading {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            background-color: color-mix(in srgb, var(--background-color) 75%, transparent);
+            backdrop-filter: blur(6px); 
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 9999; 
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s 0.3s linear;
+        }
+        
+        #loading.visible { 
+            opacity: 1; 
+            visibility: visible; 
+            transition: opacity 0.3s ease, visibility 0s 0s linear; 
+        }
+        
+        .spinner {
+            width: 44px; 
+            height: 44px;
+            border: 5px solid var(--primary-color);
+            border-bottom-color: transparent;
+            border-radius: 50%; 
+            display: inline-block;
+            animation: spin 0.7s linear infinite;
+        }
+        
+        @keyframes spin { 
+            100% { transform: rotate(360deg); } 
+        }
+
+        .view-section { 
+            display: none; 
+        }
+        
+        .view-section.visible { 
+            display: block; 
+            animation: fadeIn 0.4s ease-out; 
+        }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(15px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        #user-home h3 {
+            font-size: 1.8rem; 
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) * 2.5);
+            padding: 0 var(--spacing-unit);
+            color: var(--on-surface-color);
+        }
+        
+        #game-list-container { 
+            min-height: 250px; 
+        }
+        
+        #game-list {
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: calc(var(--spacing-unit) * 2.5);
+        }
+        
+        @media (min-width: 480px) { 
+            #game-list { 
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            } 
+        }
+        
+        @media (min-width: 768px) { 
+            #game-list { 
+                grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); 
+                gap: calc(var(--spacing-unit) * 3); 
+            } 
+        }
+        
+        @media (min-width: 1024px) { 
+            #game-list { 
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); 
+            } 
+        }
+
+        .game-card {
+            background-color: var(--surface-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color var(--transition-speed) ease;
+            display: flex; 
+            flex-direction: column;
+            cursor: pointer; 
+            position: relative;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--box-shadow-strong);
+        }
+        
+        .game-card:active { 
+            transform: scale(0.96) translateY(0); 
+            box-shadow: var(--box-shadow); 
+            background-color: var(--highlight-bg); 
+        }
+        
+        .game-card-image-container {
+            width: 100%; 
+            padding-bottom: 100%; 
+            position: relative;
+            background-color: #e9ecef; 
+            overflow: hidden;
+        }
+        
+        body.dark-theme .game-card-image-container { 
+            background-color: #374151; 
+        }
+        
+        .game-card-image-container img {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; 
+            display: block; 
+            border: none;
+            transition: transform 0.35s ease;
+        }
+        
+        .game-card:hover .game-card-image-container img { 
+            transform: scale(1.08); 
+        }
+        
+        .game-card-info { 
+            padding: calc(var(--spacing-unit) * 1.8); 
+            text-align: left; 
+        }
+        
+        .game-card h4 {
+            font-size: 1rem; 
+            font-weight: 600;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis;
+            margin-bottom: calc(var(--spacing-unit) * 0.75);
+            color: var(--on-surface-color);
+        }
+        
+        .play-text {
+            font-size: 0.85rem; 
+            font-weight: 500;
+            color: var(--primary-color); 
+            display: block;
+        }
+        
+        .game-list-message { 
+            text-align: center; 
+            padding: calc(var(--spacing-unit) * 8) 0; 
+            color: var(--on-surface-variant-color); 
+            font-size: 1.05rem; 
+            font-weight: 500;
+        }
+        
+        .game-list-message.error-message { 
+            color: var(--error-color); 
+            font-weight: 600; 
+        }
+
+        #game-player {
+            position: fixed; 
+            inset: 0;
+            background-color: #000; 
+            z-index: 1000;
+            display: flex; 
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0s 0.3s linear;
+        }
+        
+        #game-player.visible { 
+            opacity: 1; 
+            visibility: visible; 
+            transition: opacity 0.3s ease, visibility 0s 0s linear; 
+        }
+        
+        #game-iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+            flex-grow: 1; 
+            background-color: #000; 
+        }
+        
+        #back-button {
+            position: absolute;
+            top: calc(var(--safe-area-inset-top) + 18px);
+            left: calc(var(--safe-area-inset-left) + 18px);
+            background-color: rgba(35, 35, 35, 0.85);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            color: white; 
+            border: none; 
+            border-radius: 50%;
+            width: 42px; 
+            height: 42px;
+            cursor: pointer; 
+            z-index: 1001;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        
+        #back-button:hover { 
+            background-color: rgba(0, 0, 0, 0.75); 
+            transform: scale(1.05); 
+        }
+        
+        #back-button:active { 
+            transform: scale(0.95); 
+            background-color: rgba(55,55,55,0.9); 
+        }
+        
+        #back-button svg { 
+            width: 22px; 
+            height: 22px; 
+            fill: white; 
+        }
+
+        /* Settings Modal */
+        .settings-modal-overlay {
+            position: fixed; 
+            inset: 0;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px); 
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1050;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity var(--transition-speed) ease, visibility 0s var(--transition-speed) linear;
+        }
+        
+        .settings-modal-overlay.visible {
+            opacity: 1; 
+            visibility: visible;
+            transition: opacity var(--transition-speed) ease, visibility 0s 0s linear;
+        }
+        
+        .settings-modal {
+            background-color: var(--surface-color);
+            color: var(--on-surface-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow-strong);
+            width: 90%; 
+            max-width: 480px;
+            padding: calc(var(--spacing-unit) * 3);
+            transform: scale(0.95);
+            transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+        
+        .settings-modal-overlay.visible .settings-modal { 
+            transform: scale(1); 
+        }
+        
+        .settings-modal-header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            padding-bottom: calc(var(--spacing-unit) * 2);
+            border-bottom: 1px solid var(--separator-color);
+        }
+        
+        .settings-modal-header h2 { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--on-surface-color); 
+        }
+        
+        .settings-modal-close-button {
+            background: none; 
+            border: none; 
+            color: var(--on-surface-variant-color);
+            padding: var(--spacing-unit); 
+            cursor: pointer; 
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        
+        .settings-modal-close-button svg { 
+            width: 24px; 
+            height: 24px; 
+            fill: currentColor; 
+        }
+        
+        .settings-modal-close-button:hover { 
+            color: var(--on-surface-color); 
+            background-color: var(--highlight-bg); 
+        }
+
+        .settings-section { 
+            margin-bottom: calc(var(--spacing-unit) * 3); 
+        }
+        
+        .settings-section h3 {
+            font-size: 1.1rem; 
+            font-weight: 600;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+            color: var(--on-surface-color);
+        }
+        
+        .settings-option-group { 
+            display: flex; 
+            gap: var(--spacing-unit); 
+        }
+        
+        .settings-option-group button {
+            flex-grow: 1; 
+            padding: calc(var(--spacing-unit) * 1.25) var(--spacing-unit);
+            border: 1px solid var(--separator-color);
+            background-color: var(--surface-color);
+            color: var(--on-surface-variant-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem; 
+            font-weight: 500; 
+            cursor: pointer;
+            transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+        }
+        
+        .settings-option-group button.active {
+            background-color: var(--primary-color);
+            color: var(--on-primary-color);
+            border-color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .settings-option-group button:not(.active):hover { 
+            background-color: var(--highlight-bg); 
+        }
+
+        .about-section p { 
+            font-size: 0.95rem; 
+            line-height: 1.7; 
+            margin-bottom: var(--spacing-unit); 
+        }
+        
+        .about-section a {
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        
+        .about-section a:hover { 
+            text-decoration: underline; 
+            color: var(--primary-variant-color); 
+        }
+
+        /* Accessibility improvements */
+        [role="button"], 
+        button, 
+        input[type="button"], 
+        input[type="submit"] { 
+            cursor: pointer; 
+        }
+        
+        *:focus-visible {
+            outline: 3px solid var(--primary-variant-color);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px var(--highlight-bg);
+        }
+        
+        input[type="text"]:focus-visible, 
+        input[type="email"]:focus-visible, 
+        input[type="password"]:focus-visible, 
+        textarea:focus-visible, 
+        #search-input:focus-visible {
+            outline: none;
+        }
+        
+        .game-card:focus-visible {
+            outline: 3px solid var(--primary-variant-color);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px var(--highlight-bg), var(--box-shadow-strong);
+        }
+
+        @media (max-width: 600px) {
+            .app-header h1 .app-icon { 
+                display: none; 
+            }
+            .app-header h1 { 
+                font-size: 1.2rem; 
+            }
+        }
+        
+        @media (max-width: 420px) {
+            .app-header h1 { 
+                display:none; 
+            }
+            .header-left { 
+                display: none; 
+            }
+            .header-right { 
+                margin-left: auto; 
+            }
+            #search-input { 
+                padding-left: calc(var(--spacing-unit) * 4.5); 
+            }
+            .search-bar-container::before { 
+                left: calc(var(--spacing-unit) * 1.5); 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <h1><span class="app-icon">🛍️</span> Prostore</h1>
+        </div>
+        <div class="header-center">
+            <div class="search-bar-container">
+                <input type="search" id="search-input" placeholder="Search Apps & Games..." autocomplete="off">
+                <button id="search-clear-button" aria-label="Clear search" style="display:none;">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="header-right">
+            <button id="settings-button" aria-label="Open settings">
+                <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="main-container">
+        <section id="user-home" class="view-section visible">
+            <h3 data-translate-key="discover_apps_games">Discover Apps & Games</h3>
+            <div id="game-list-container">
+                <div id="game-list"></div>
+                <div id="game-list-message-area"></div>
+            </div>
+        </section>
+    </div>
+
+    <section id="game-player">
+        <button id="back-button" title="Back to game list" aria-label="Back to list">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"/></svg>
+        </button>
+        <iframe id="game-iframe" sandbox="allow-scripts allow-same-origin" title="Game Player"></iframe>
+    </section>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal-overlay" class="settings-modal-overlay">
+        <div id="settings-modal" class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+            <div class="settings-modal-header">
+                <h2 id="settings-modal-title" data-translate-key="settings_title">Settings</h2>
+                <button id="settings-modal-close-button" aria-label="Close settings">
+                    <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </button>
+            </div>
+            <div class="settings-modal-content">
+                <div class="settings-section">
+                    <h3 data-translate-key="language_title">Language</h3>
+                    <div class="settings-option-group">
+                        <button id="lang-en-button" data-lang="en">English</button>
+                        <button id="lang-hi-button" data-lang="hi">हिन्दी</button>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3 data-translate-key="theme_title">Theme</h3>
+                    <div class="settings-option-group">
+                        <button id="theme-light-button" data-theme="light" data-translate-key="theme_light">Light</button>
+                        <button id="theme-dark-button" data-theme="dark" data-translate-key="theme_dark">Dark</button>
+                    </div>
+                </div>
+                <div class="settings-section about-section">
+                    <h3 data-translate-key="about_title">About</h3>
+                    <p data-translate-key="about_created_by">MOR INFOINFO CHEK YOU TUBE 🍿</p>
+                    <p>
+                        <span data-translate-key="about_youtube_channel">Check out our YouTube Channel:</span>
+                        <a href="https://tools.apgy.in/c/@AK_MOD_99" target="_blank" rel="noopener noreferrer">AK MOD CHANNEL CHECKOUT </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, getDocs, query, orderBy, limit, startAfter } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBw95oM2s8guGisB42y181t4sYUGWkj-R8",
+        authDomain: "aalok-app-store.firebaseapp.com",
+        databaseURL: "https://aalok-app-store-default-rtdb.firebaseio.com",
+        projectId: "aalok-app-store",
+        storageBucket: "aalok-app-store.firebasestorage.app",
+        messagingSenderId: "459007742282",
+        appId: "1:459007742282:web:4ef6d943eb5f51289531b3",
+        measurementId: "G-6ECNTZG298"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const gamesCollectionRef = collection(db, "games");
+
+    const loadingSpinner = document.getElementById('loading');
+    const userHome = document.getElementById('user-home');
+    const gamePlayer = document.getElementById('game-player');
+    const gameListDiv = document.getElementById('game-list');
+    const gameListMessageArea = document.getElementById('game-list-message-area');
+    const gameIframe = document.getElementById('game-iframe');
+    const backButton = document.getElementById('back-button');
+    const bodyElement = document.body;
+    const searchInput = document.getElementById('search-input');
+    const searchClearButton = document.getElementById('search-clear-button');
+    
+    const settingsButton = document.getElementById('settings-button');
+    const settingsModalOverlay = document.getElementById('settings-modal-overlay');
+    const settingsModalCloseButton = document.getElementById('settings-modal-close-button');
+    const langEnButton = document.getElementById('lang-en-button');
+    const langHiButton = document.getElementById('lang-hi-button');
+    const themeLightButton = document.getElementById('theme-light-button');
+    const themeDarkButton = document.getElementById('theme-dark-button');
+
+    let allLoadedGamesData = [];
+    let lastVisibleGame = null;
+    let isLoadingGames = false;
+    const GAMES_PER_PAGE = 12;
+
+    const translations = {
+        en: {
+            search_placeholder: "Search Apps & Games...",
+            discover_apps_games: "Discover Apps & Games",
+            loading_games: "Loading awesome apps & games...",
+            loading_more: "Loading more...",
+            no_results_for: "No results found for \"{searchTerm}\".",
+            no_apps_games_yet: "No Apps or Games here yet. Check back later!",
+            thats_all_folks: "That's all for now!",
+            error_fetching_games: "Oops! Couldn't fetch games. Please try again.",
+            open_game: "Open {gameName}",
+            tap_to_open: "Tap to Open",
+            settings_title: "Settings",
+            language_title: "Language",
+            theme_title: "Theme",
+            theme_light: "Light",
+            theme_dark: "Dark",
+            about_title: "About",
+            about_created_by: "Created by Movie Time With AI 🍿",
+            about_youtube_channel: "Check out our YouTube Channel:",
+            clear_search: "Clear search",
+            open_settings: "Open settings",
+            close_settings: "Close settings",
+            back_to_list: "Back to list"
+        },
+        hi: {
+            search_placeholder: "Apps & Games खोजें...",
+            discover_apps_games: "Apps & Games खोजें",
+            loading_games: "शानदार गेम्स लोड हो रहे हैं...",
+            loading_more: "और लोड हो रहे हैं...",
+            no_results_for: "\"{searchTerm}\" के लिए कोई परिणाम नहीं मिला।",
+            no_apps_games_yet: "यहां अभी कोई Apps या Games नहीं हैं। बाद में देखें!",
+            thats_all_folks: "अभी के लिए बस इतना ही!",
+            error_fetching_games: "उफ़! गेम्स प्राप्त नहीं किए जा सके। कृपया पुनः प्रयास करें।",
+            open_game: "{gameName} खोलें",
+            tap_to_open: "खोलने के लिए टैप करें",
+            settings_title: "सेटिंग्स",
+            language_title: "भाषा",
+            theme_title: "थीम",
+            theme_light: "लाइट",
+            theme_dark: "डार्क",
+            about_title: "विवरण",
+            about_created_by: "Movie Time With AI 🍿 द्वारा बनाया गया",
+            about_youtube_channel: "हमारा यूट्यूब चैनल देखें:",
+            clear_search: "खोज हटाएं",
+            open_settings: "सेटिंग्स खोलें",
+            close_settings: "सेटिंग्स बंद करें",
+            back_to_list: "सूची पर वापस जाएं"
+        }
+    };
+    
+    let currentLang = localStorage.getItem('prostore_lang') || 'en';
+    let currentTheme = localStorage.getItem('prostore_theme') || 'light';
+
+    function applyTranslations() {
+        document.documentElement.lang = currentLang;
+        const elements = document.querySelectorAll('[data-translate-key]');
+        elements.forEach(el => {
+            const key = el.dataset.translateKey;
+            if (translations[currentLang] && translations[currentLang][key]) {
+                el.textContent = translations[currentLang][key];
+            }
+        });
+        
+        searchInput.placeholder = translations[currentLang]?.search_placeholder || "Search...";
+        if (gameListDiv.querySelector('.play-text')) {
+            document.querySelectorAll('.play-text').forEach(pt => pt.textContent = translations[currentLang]?.tap_to_open || "Tap to Open");
+        }
+        
+        searchClearButton.setAttribute('aria-label', translations[currentLang]?.clear_search || 'Clear search');
+        settingsButton.setAttribute('aria-label', translations[currentLang]?.open_settings || 'Open settings');
+        settingsModalCloseButton.setAttribute('aria-label', translations[currentLang]?.close_settings || 'Close settings');
+        backButton.setAttribute('aria-label', translations[currentLang]?.back_to_list || 'Back to list');
+        backButton.setAttribute('title', translations[currentLang]?.back_to_list || 'Back to list');
+    }
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('prostore_lang', lang);
+        applyTranslations();
+        updateLanguageButtons();
+        
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            handleSearch();
+        } else if (allLoadedGamesData.length > 0) {
+            displayGames(allLoadedGamesData);
+        }
+    }
+    
+    function updateLanguageButtons() {
+        langEnButton.classList.toggle('active', currentLang === 'en');
+        langHiButton.classList.toggle('active', currentLang === 'hi');
+    }
+
+    function setTheme(theme) {
+        currentTheme = theme;
+        localStorage.setItem('prostore_theme', theme);
+        bodyElement.classList.toggle('dark-theme', theme === 'dark');
+        updateThemeButtons();
+    }
+
+    function updateThemeButtons() {
+        themeLightButton.classList.toggle('active', currentTheme === 'light');
+        themeDarkButton.classList.toggle('active', currentTheme === 'dark');
+    }
+    
+    function showLoading() { 
+        loadingSpinner.classList.add('visible'); 
+    }
+    
+    function hideLoading() { 
+        loadingSpinner.classList.remove('visible'); 
+    }
+
+    function setActiveView(viewId) {
+        document.querySelectorAll('.view-section').forEach(section => section.classList.remove('visible'));
+        
+        if (viewId === 'game-player') {
+            gamePlayer.classList.add('visible');
+            bodyElement.classList.add('game-active');
+        } else if (viewId === 'user-home') {
+            userHome.classList.add('visible');
+            gamePlayer.classList.remove('visible');
+            bodyElement.classList.remove('game-active');
+            if (gameIframe.srcdoc) { 
+                gameIframe.srcdoc = 'about:blank'; 
+            }
+        }
+    }
+    
+    function escapeHTML(str) {
+        if (!str) return '';
+        return str.replace(/[&<>"']/g, function (match) {
+            return { 
+                '&': '&amp;', 
+                '<': '&lt;', 
+                '>': '&gt;', 
+                '"': '&quot;', 
+                "'": '&#39;' 
+            }[match];
+        });
+    }
+
+    function displayGames(gamesToDisplay) {
+        gameListDiv.innerHTML = ''; 
+
+        if (gamesToDisplay.length === 0) {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm !== '') {
+                gameListMessageArea.innerHTML = `<div class="game-list-message">${(translations[currentLang]?.no_results_for || "No results for \"{searchTerm}\"").replace('{searchTerm}', escapeHTML(searchTerm))}</div>`;
+            } else if (allLoadedGamesData.length === 0 && !isLoadingGames) {
+                gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.no_apps_games_yet || "No apps yet."}</div>`;
+            } else {
+                if (!isLoadingGames && gameListMessageArea.textContent.includes(translations[currentLang]?.loading_games) || gameListMessageArea.textContent.includes(translations[currentLang]?.loading_more)) {
+                    gameListMessageArea.innerHTML = ''; 
+                }
+            }
+        } else {
+            gameListMessageArea.innerHTML = ''; 
+        }
+        
+        gamesToDisplay.forEach(gameData => {
+            if (gameData.name && gameData.imageUrl && gameData.htmlCode) {
+                renderGameCard(gameData);
+            }
+        });
+    }
+
+    async function loadGames(loadMore = false) {
+        if (isLoadingGames) return;
+        if (loadMore && searchInput.value.trim() !== '') {
+            return;
+        }
+        isLoadingGames = true;
+
+        const loadingMsgKey = loadMore ? 'loading_more' : 'loading_games';
+        if (!loadMore && searchInput.value.trim() === '') {
+            gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.[loadingMsgKey] || "Loading..."}</div>`;
+        } else if (loadMore && searchInput.value.trim() === '') {
+            gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.[loadingMsgKey] || "Loading more..."}</div>`;
+        }
+
+        try {
+            let q;
+            if (loadMore && lastVisibleGame) {
+                q = query(gamesCollectionRef, orderBy("name"), startAfter(lastVisibleGame), limit(GAMES_PER_PAGE));
+            } else {
+                q = query(gamesCollectionRef, orderBy("name"), limit(GAMES_PER_PAGE));
+            }
+
+            const querySnapshot = await getDocs(q);
+            const fetchedGames = [];
+            querySnapshot.forEach((doc) => {
+                const gameData = { id: doc.id, ...doc.data() };
+                if (gameData.name && gameData.imageUrl && gameData.htmlCode) {
+                    fetchedGames.push(gameData);
+                } else {
+                    console.warn(`Skipping game: ${doc.id} (missing required data)`);
+                }
+            });
+
+            if (!loadMore) {
+                allLoadedGamesData = fetchedGames;
+            } else {
+                allLoadedGamesData.push(...fetchedGames);
+            }
+            
+            if (searchInput.value.trim() !== '') {
+                handleSearch();
+            } else {
+                displayGames(allLoadedGamesData);
+                if (allLoadedGamesData.length > 0) {
+                    gameListMessageArea.innerHTML = '';
+                } else if (!isLoadingGames && allLoadedGamesData.length === 0) {
+                    gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.no_apps_games_yet || "No apps yet."}</div>`;
+                }
+            }
+
+            if (!querySnapshot.empty) {
+                lastVisibleGame = querySnapshot.docs[querySnapshot.docs.length - 1];
+            }
+            
+            if (querySnapshot.docs.length < GAMES_PER_PAGE) {
+                if (searchInput.value.trim() === '') { 
+                    if (allLoadedGamesData.length > 0) {
+                        gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.thats_all_folks || "That's all!"}</div>`;
+                    } else if (allLoadedGamesData.length === 0 && !isLoadingGames) {
+                        gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.no_apps_games_yet || "No apps yet."}</div>`;
+                    }
+                }
+                window.removeEventListener('scroll', handleScroll);
+            } else if (searchInput.value.trim() === '') {
+                window.addEventListener('scroll', handleScroll);
+            }
+
+        } catch (error) {
+            console.error("Error loading games: ", error);
+            gameListMessageArea.innerHTML = `<div class="game-list-message error-message">${translations[currentLang]?.error_fetching_games || "Error fetching games."}</div>`;
+            if (searchInput.value.trim() !== '') { 
+                handleSearch(); 
+            } else { 
+                displayGames([]); 
+            }
+        } finally {
+            isLoadingGames = false;
+        }
+    }
+
+    function renderGameCard(game) {
+        const card = document.createElement('article');
+        card.classList.add('game-card');
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        const openGameText = (translations[currentLang]?.open_game || "Open {gameName}").replace('{gameName}', game.name);
+        card.setAttribute('aria-label', openGameText);
+
+        const placeholderSvg = `data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNlOWVjZWYiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjYmNiZGNjIj5App%PC90ZXh0Pjwvc3ZnPg==`;
+
+        card.innerHTML = `
+            <div class="game-card-image-container">
+                <img src="${escapeHTML(game.imageUrl) || placeholderSvg}" alt="${escapeHTML(game.name)} poster" loading="lazy" onerror="this.onerror=null; this.src='${placeholderSvg}';">
+            </div>
+            <div class="game-card-info">
+                <h4>${escapeHTML(game.name)}</h4>
+                <span class="play-text">${translations[currentLang]?.tap_to_open || "Tap to Open"}</span>
+            </div>
+        `;
+        
+        card.addEventListener('click', () => handlePlayClick(game));
+        card.addEventListener('keydown', (event) => { 
+            if (event.key === 'Enter' || event.key === ' ') { 
+                event.preventDefault(); 
+                handlePlayClick(game); 
+            } 
+        });
+        gameListDiv.appendChild(card);
+    }
+
+    function handlePlayClick(game) {
+        if (!game.htmlCode) {
+            alert(`Sorry, ${game.name} cannot be played (game code missing).`);
+            return;
+        }
+        gameIframe.srcdoc = game.htmlCode;
+        setActiveView('game-player');
+    }
+
+    backButton.addEventListener('click', () => {
+        setActiveView('user-home');
+    });
+    
+    function handleSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        searchClearButton.style.display = searchTerm ? 'flex' : 'none';
+
+        if (!searchTerm) {
+            displayGames(allLoadedGamesData);
+            if (allLoadedGamesData.length === 0 && !isLoadingGames) {
+                gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.no_apps_games_yet || "No apps yet."}</div>`;
+            } else if (allLoadedGamesData.length > 0 && allLoadedGamesData.length < GAMES_PER_PAGE && !isLoadingGames) {
+                gameListMessageArea.innerHTML = `<div class="game-list-message">${translations[currentLang]?.thats_all_folks || "That's all!"}</div>`;
+            } else if (allLoadedGamesData.length > 0) {
+                gameListMessageArea.innerHTML = '';
+            }
+            window.addEventListener('scroll', handleScroll);
+            return;
+        }
+
+        window.removeEventListener('scroll', handleScroll);
+
+        const filteredGames = allLoadedGamesData.filter(game =>
+            game.name.toLowerCase().includes(searchTerm)
+        );
+        displayGames(filteredGames);
+    }
+
+    searchInput.addEventListener('input', handleSearch);
+    searchClearButton.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClearButton.style.display = 'none';
+        handleSearch(); 
+        searchInput.focus();
+    });
+
+    function handleScroll() {
+        if (userHome.classList.contains('visible') && !isLoadingGames && searchInput.value.trim() === '') {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            if (scrollTop + clientHeight >= scrollHeight - 300) {
+                loadGames(true);
+            }
+        }
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+
+    function openSettingsModal() {
+        settingsModalOverlay.classList.add('visible');
+        bodyElement.classList.add('modal-open');
+        settingsModalCloseButton.focus();
+    }
+    
+    function closeSettingsModal() {
+        settingsModalOverlay.classList.remove('visible');
+        bodyElement.classList.remove('modal-open');
+        settingsButton.focus();
+    }
+
+    settingsButton.addEventListener('click', openSettingsModal);
+    settingsModalCloseButton.addEventListener('click', closeSettingsModal);
+    settingsModalOverlay.addEventListener('click', (event) => {
+        if (event.target === settingsModalOverlay) {
+            closeSettingsModal();
+        }
+    });
+    
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && settingsModalOverlay.classList.contains('visible')) {
+            closeSettingsModal();
+        }
+    });
+
+    langEnButton.addEventListener('click', () => setLanguage('en'));
+    langHiButton.addEventListener('click', () => setLanguage('hi'));
+    themeLightButton.addEventListener('click', () => setTheme('light'));
+    themeDarkButton.addEventListener('click', () => setTheme('dark'));
+
+    function initializeAppUI() {
+        showLoading();
+        setTheme(currentTheme);
+        setLanguage(currentLang);
+        
+        setActiveView('user-home');
+        loadGames();
+        hideLoading();
+    }
+
+    initializeAppUI();
+
+</script>
+
+</body>
+</html>
